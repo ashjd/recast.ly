@@ -6,11 +6,11 @@ class App extends React.Component {
 
     this.state = {   
       videos: [],
-      currentVideo: {}
+      video: exampleVideoData[0]
     };
 
     this.handleVideoEntryClick = function(index) {
-      this.setState({currentVideo: this.state.videos[index]});
+      this.setState({video: this.state.videos[index]});
     };
   }
 
@@ -19,7 +19,7 @@ class App extends React.Component {
       <div>
         <Nav />
         <div className="col-md-7">
-          <VideoPlayer currentVideo = { this.state.currentVideo } />
+          <VideoPlayer video = { this.state.video } />
         </div>
         <div className="col-md-5">
           <VideoList videos = { this.state.videos} handleVideoEntryClick = {this.handleVideoEntryClick.bind(this) }/>

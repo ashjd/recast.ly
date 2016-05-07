@@ -47,6 +47,7 @@ describe ('VideoPlayer', function() {
 
   it('should dynamically render a video\'s title', function() {
     var cuteCatVideoTitleElement = findRenderedDOMComponentWithClass(cuteCatVideo, 'video-player-details');
+    console.log('title element is', cuteCatVideoTitleElement);
     var superCuteCatVideoTitleElement = findRenderedDOMComponentWithClass(superCuteCatVideo, 'video-player-details');
     var hackReactorVideoTitleElement = findRenderedDOMComponentWithClass(hackReactorVideo, 'video-player-details');
 
