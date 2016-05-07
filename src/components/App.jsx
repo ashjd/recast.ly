@@ -1,35 +1,17 @@
-// var App = () => (
-//   <div>
-//     <Nav />
-//     <div className="col-md-7">
-//       <VideoPlayer/>
-//     </div>
-//     <div className="col-md-5">
-//       <VideoList/>
-//     </div>
-//   </div>
-// );
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      //set the state for - 
-      // all the videos in the video list
-      videos: exampleVideoData,
-      //current video in the player
-      currentVideo: exampleVideoData[0]
+    this.state = {   
+      videos: [],
+      currentVideo: {}
     };
 
-    handleClick = function(event) {
-      //get the song that was clicked
-      //set it as the current video
-      
+    this.handleVideoEntryClick = function(videoListItem) {
+      this.setState({currentVideo: this.state.videos.videoListItem.id.videoid});
     };
-
-    //handleClick.bind(reference to videoPlayer, reference to videoList)
-
   }
 
   render() {
@@ -37,10 +19,10 @@ class App extends React.Component {
       <div>
         <Nav />
         <div className="col-md-7">
-          <VideoPlayer currentVideo = { this.state.currentVideo }/>
+          <VideoPlayer currentVideo = { this.state.currentVideo } handleVideoEntryClick = {this.handleVideoEntryClick.bind(this) }/>
         </div>
         <div className="col-md-5">
-          <VideoList videos = { this.state.videos }/>
+          <VideoList videos = { this.state.videos} />
         </div>
       </div>
     );

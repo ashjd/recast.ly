@@ -10,20 +10,6 @@ var VideoList = (props) => {
   );  
 };
 
-// class VideoList extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   render() {
-//     var i = 1;
-//     var list = this.props.videos.map( (video) => {
-//       return <VideoListEntry>{video}</VideoListEntry>; 
-//     });
-//     return <div className="video-list media"> {list} </div>;
-//   }
-// }
-
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
 VideoList.propTypes = {
@@ -34,4 +20,3 @@ VideoList.propTypes = {
 // `var` declarations will only exist globally where explicitly defined.
 window.VideoList = VideoList;
 
-//React.render(<VideoList videos={exampleVideoData} />, document.getElem('body'));
