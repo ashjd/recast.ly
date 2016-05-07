@@ -9,8 +9,8 @@ class App extends React.Component {
       currentVideo: {}
     };
 
-    this.handleVideoEntryClick = function(videoListItem) {
-      this.setState({currentVideo: this.state.videos.videoListItem.id.videoid});
+    this.handleVideoEntryClick = function(index) {
+      this.setState({currentVideo: this.state.videos[index]});
     };
   }
 
@@ -19,10 +19,10 @@ class App extends React.Component {
       <div>
         <Nav />
         <div className="col-md-7">
-          <VideoPlayer currentVideo = { this.state.currentVideo } handleVideoEntryClick = {this.handleVideoEntryClick.bind(this) }/>
+          <VideoPlayer currentVideo = { this.state.currentVideo } />
         </div>
         <div className="col-md-5">
-          <VideoList videos = { this.state.videos} />
+          <VideoList videos = { this.state.videos} handleVideoEntryClick = {this.handleVideoEntryClick.bind(this) }/>
         </div>
       </div>
     );
