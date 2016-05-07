@@ -17,13 +17,15 @@ class App extends React.Component {
     this.state = {
       //set the state for - 
       // all the videos in the video list
-
+      videos: exampleVideoData,
       //current video in the player
-
+      currentVideo: exampleVideoData[0]
     };
 
     handleClick = function(event) {
-     // this.setState;
+      //get the song that was clicked
+      //set it as the current video
+      
     };
 
     //handleClick.bind(reference to videoPlayer, reference to videoList)
@@ -35,10 +37,10 @@ class App extends React.Component {
       <div>
         <Nav />
         <div className="col-md-7">
-          <VideoPlayer/>
+          <VideoPlayer currentVideo = { this.state.currentVideo }/>
         </div>
         <div className="col-md-5">
-          <VideoList/>
+          <VideoList videos = { this.state.videos }/>
         </div>
       </div>
     );
