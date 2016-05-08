@@ -1,6 +1,6 @@
 var VideoList = (props) => { 
-  var list = props.videos.map( (video, i) => {
-    return <VideoListEntry handleVideoEntryClick={props.handleVideoEntryClick} >{video}</VideoListEntry>; 
+  var list = props.videos.map( (video) => {
+    return <VideoListEntry key={video.etag} video={props.video} handleVideoEntryClick={props.handleVideoEntryClick}>{video}</VideoListEntry>; 
   });
    
   return (
